@@ -24,6 +24,7 @@ class AppPages {
       page: () => ProductDetailScreen(),
       binding: ProductDetailBinding(),
       transition: Transition.downToUp,
-    )
+    ),
+
   ];
 }
