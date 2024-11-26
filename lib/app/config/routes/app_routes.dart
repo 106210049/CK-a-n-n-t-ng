@@ -11,7 +11,7 @@ class Routes {
 class _Paths {
   static const dashboard = '/dashboard';
   static const product = '/product';
-
+  static const profile= '/profile';
   // Example :
   // static const index = '/';
   // static const splash = '/splash';

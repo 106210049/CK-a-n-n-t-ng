@@ -5,6 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:market/app/features/dashboard/explore/views/screens/explore_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+
+import '../../../../profile/views/screen/profile_screen.dart';
 // binding
 part '../../bindings/dashboard_binding.dart';
 
@@ -40,7 +42,13 @@ class DashboardScreen extends StatelessWidget {
       ExploreScreen(),
       Center(child: Text("Favorite Screen")),
       Center(child: Text("Messages Screen")),
-      Center(child: Text("Profile Screen")),
+      // Center(child: Text("Profile Screen")),
+      // ElevatedButton(
+      //   onPressed: () {
+      //     Get.toNamed('/profile'); // Điều hướng đến Profile
+      //   },
+      //   child: Text('Go to Profile'),
+      // ),
     ];
   }
 

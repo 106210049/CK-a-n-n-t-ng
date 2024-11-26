@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:market/app/features/dashboard/explore/views/screens/explore_screen.dart';
 import 'package:market/app/features/dashboard/index/views/screens/dashboard_screen.dart';
 import 'package:market/app/features/product/product_detail/views/screens/product_detail_screen.dart';
-
+import 'package:market/app/features/profile/views/screen/profile_screen.dart';
 part 'app_routes.dart';
 
 /// contains all configuration pages
@@ -25,6 +25,10 @@ class AppPages {
       binding: ProductDetailBinding(),
       transition: Transition.downToUp,
     ),
-
+    GetPage(
+      name: '/profile',
+      page: () => ProfileScreen(),
+      binding: ProfileBinding(),
+    )
   ];
 }
