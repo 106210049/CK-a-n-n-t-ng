@@ -42,7 +42,7 @@ class DashboardScreen extends StatelessWidget {
       ExploreScreen(),
       Center(child: Text("Favorite Screen")),
       Center(child: Text("Messages Screen")),
-      // Center(child: Text("Profile Screen")),
+      Center(child: Text("Profile Screen")),
       // ElevatedButton(
       //   onPressed: () {
       //     Get.toNamed('/profile'); // Điều hướng đến Profile
