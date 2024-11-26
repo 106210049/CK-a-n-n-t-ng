@@ -42,19 +42,14 @@ class DashboardScreen extends StatelessWidget {
       ExploreScreen(),
       Center(child: Text("Favorite Screen")),
       Center(child: Text("Messages Screen")),
-      Center(child: Text("Profile Screen")),
-      // ElevatedButton(
-      //   onPressed: () {
-      //     Get.toNamed('/profile'); // Điều hướng đến Profile
-      //   },
-      //   child: Text('Go to Profile'),
-      // ),
+      // Center(child: Text("Profile Screen"),),
+      ProfileScreen(),
     ];
   }
 
   List<PersistentBottomNavBarItem> _buildNavBarsItems() {
     return [
-      _navbarItem(iconData: FontAwesomeIcons.thLarge, title: "Explore"),
+      _navbarItem(iconData: FontAwesomeIcons.thLarge, title: "Explore",),
       _navbarItem(iconData: FontAwesomeIcons.solidStar, title: "Favorite"),
       _navbarItem(iconData: FontAwesomeIcons.solidCommentAlt, title: "Messages"),
       _navbarItem(iconData: FontAwesomeIcons.userAlt, title: "Profile"),
