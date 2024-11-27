@@ -4,6 +4,7 @@ part of 'app_pages.dart';
 class Routes {
   static const dashboard = _Paths.dashboard;
   static const product = _Paths.product;
+  static const profile = _Paths.profile;
 }
 
 /// contains a list of route names.

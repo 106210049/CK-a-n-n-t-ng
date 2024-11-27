@@ -3,17 +3,24 @@ library profile;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:market/app/utils/services/rest_api_services.dart';
 import 'package:market/app/features/dashboard/explore/views/screens/explore_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+
+import '../../../dashboard/index/views/screens/dashboard_screen.dart';
 // binding
 part '../../bindings/profile_binding.dart';
 part '../../controllers/profile_controller.dart';
-
 class ProfileScreen extends StatelessWidget {
+  final UserService userService = UserService(); // Khởi tạo UserService
+
   @override
   Widget build(BuildContext context) {
+    // Lấy thông tin người dùng (ví dụ: ID = "fwg123")
+    final user = userService.getUserByID("12345");
+
     return Scaffold(
-      backgroundColor: Colors.orangeAccent[600], // Màu nền phần trên
+      backgroundColor: Colors.orangeAccent,
       appBar: AppBar(
         backgroundColor: Colors.orangeAccent,
         elevation: 0,
@@ -43,12 +50,11 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 50,
-                  backgroundImage: NetworkImage(
-                      'https://via.placeholder.com/150'), // URL ảnh đại diện
+                  backgroundImage: user.profilImage, // Hiển thị ảnh đại diện
                 ),
                 SizedBox(height: 10),
                 Text(
-                  "Hoang Bao Long",
+                  user.name, // Hiển thị tên người dùng
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -56,7 +62,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Classic Member",
+                  "${user.city}, ${user.country}", // Hiển thị thành phố và quốc gia
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white70,
@@ -69,6 +75,7 @@ class ProfileScreen extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         // Xử lý nút Start Selling
+
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
@@ -111,7 +118,7 @@ class ProfileScreen extends StatelessWidget {
                   subItems: ["To Pay", "To Ship", "To Receive"],
                 ),
                 _buildCategory(context,
-                    icon: Icons.favorite, title: "Favorite", subItems: []),
+                    icon: FontAwesomeIcons.solidStar, title: "Favorite", subItems: []),
                 _buildCategory(context,
                     icon: Icons.history, title: "Recently Viewed", subItems: []),
                 _buildCategory(context,
@@ -125,7 +132,7 @@ class ProfileScreen extends StatelessWidget {
                 _buildCategory(context,
                     icon: Icons.help, title: "Help Centre", subItems: []),
                 _buildCategory(context,
-                    icon: Icons.chat, title: "Chat with Shopee", subItems: []),
+                    icon: FontAwesomeIcons.solidCommentAlt, title: "Chat with Shop", subItems: []),
               ],
             ),
           ),

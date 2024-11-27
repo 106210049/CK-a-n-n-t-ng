@@ -14,7 +14,11 @@ class UserService extends RestApiServices {
   User getUserByID(String id) {
     if (_userA.id == id) {
       return _userA;
-    } else {
+    }
+    if(_userC.id == id){
+      return _userC;
+    }
+    else {
       return _userB;
     }
   }
@@ -34,4 +38,13 @@ class UserService extends RestApiServices {
     country: "USA",
     city: "New York",
   );
+
+  final _userC = User(
+    id: "12345",
+    profilImage: AssetImage(ImageRasterPath.market2),
+    name: "Long Store",
+    country: "Viet Nam",
+    city: "Da Nang city",
+  );
+
 }
